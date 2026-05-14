@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router'
+import { API_URL } from '../config/apiConfig'
 
 function AddUser() {
   const { register, handleSubmit, formState: { errors } } = useForm()
@@ -8,7 +9,7 @@ function AddUser() {
   let [error, setError] = useState(null)
   let navigate = useNavigate()
 
-  const API_URL = import.meta.env.VITE_API_URL;
+
 
   const onUserCreate = async (newUser) => {
     setLoading(true)

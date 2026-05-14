@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router'
+import { API_URL } from '../config/apiConfig'
 
 function UsersList() {
   let [users, setUsers] = useState([])
@@ -7,7 +8,7 @@ function UsersList() {
   let [loading, setLoading] = useState(false)
   let navigate = useNavigate()
 
-  const API_URL = import.meta.env.VITE_API_URL;
+
 
   useEffect(() => {
     setLoading(true)
