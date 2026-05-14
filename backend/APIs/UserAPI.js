@@ -16,12 +16,7 @@ UserApp.post("/users",async (req,res)=>{
 //read all users
 UserApp.get("/users",async (req,res)=>{
     let userList=await UserModel.find({status:true})
-    if (userList.length===0){
-        res.status(404).json({message:"No user present"})
-    }
-    else{
-       res.status(200).json({message:"Users",payload:userList})
-    }
+    res.status(200).json({message:"Users",payload:userList})
 })
 
 // read a user by id
